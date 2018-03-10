@@ -1,6 +1,6 @@
 {
   "name": "AprenderIonic",
-  "app_id": "",
+  "app_id": "b7cc6566",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
