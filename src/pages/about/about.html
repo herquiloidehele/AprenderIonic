@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Cantores
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let cantor of cantores">
+    <img src="{{cantor.foto}}">
+
+    <ion-card-content>
+      <ion-title>
+        {{cantor.nome}}
+      </ion-title>
+
+      <p>
+        {{cantor.descricao}}
+      </p>
+    </ion-card-content>
+
+    <hr>
+
+    <ion-item *ngFor="let redeSocial of cantor.redesSociais">
+      <ion-icon item-start style="color: blue;">
+        {{redeSocial.nome}}
+      </ion-icon>
+      <ion-badge item-end>{{redeSocial.seguidores}}</ion-badge>
+    </ion-item>
+
+  </ion-card>
+</ion-content>
