@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import {ActionSheetController, AlertController, NavController, Platform} from 'ionic-angular';
+import {BotoesPage} from "../componentes/botoes/botoes";
+import {CheckboxPage} from "../componentes/checkbox/checkbox";
+import {OpcoesPage} from "../componentes/opcoes/opcoes";
+import {FloatButtonsPage} from "../componentes/float-buttons/float-buttons";
 
 @Component({
   selector: 'page-home',
@@ -9,55 +13,30 @@ export class HomePage {
 
 
 
-  constructor(public platform: Platform,
+  constructor(public platform: Platform, public navController: NavController,
               public actionSheetController: ActionSheetController,
               public alertCobtroller: AlertController) {
 
   }
 
 
-  openMenu(){
-    let alertController = this.alertCobtroller.create();
-    let menu = this.actionSheetController.create({
-      title: 'Album',
-      cssClass: 'action-sheet-basic-page',
-      buttons: [
-        {
-          text: 'Delete',
-          role: 'destructive',
-          handler: function () {
-            alertController.setTitle('Apagar Informacao');
-            alertController.setMessage('Tem certeza que deseja apagar a informacao?');
-            alertController.addButton({text: 'Nao', handler: ()=> {} });
-            alertController.addButton({text: 'Sim', handler: ()=> {alert('Apagado')}});
-            alertController.present();
-          }
-        },
-        {
-          text: 'Informacoes',
-          handler: ()=> {
-            alertController.setTitle('Ver Informacoes');
-            alertController.setSubTitle('Subtitulo da info');
-            alertController.setMessage('Esta informacao informa que a infoemacao foi mostrada num alert.');
-            alertController.addButton('Okay');
-            alertController.present();
-          }
-        },
-        {
-          text: 'Cancelar',
-          role: 'cancel',
-          handler: () =>{
-            alertController.setTitle('Cancelamento');
-            alertController.setMessage('Informe o motivo do cancelamento');
-            alertController.addInput({name: 'motivo', placeholder: ''});
-            alertController.addButton({text: 'ENVIAR', role: 'cancel', handler: ()=> {}});
-            alertController.present();
-          }
-        }
-      ]
-    });
+  onClickOpcao(opcao){
+    switch (opcao){
+      case 'botoes': this.navController.push(BotoesPage); break;
+      case 'checkbox': this.navController.push(CheckboxPage); break;
+      case 'opcoes': this.navController.push(OpcoesPage); break;
+      case 'floatButtons': this.navController.push(FloatButtonsPage); break;
+      default: {
+        let alertController = this.alertCobtroller.create();
+        alertController.setTitle('Informacao');
+        alertController.setMessage('Esta opcao ainda nao esta disponivel');
+        alertController.addButton({
+          text: 'Okay',
+        });
+        alertController.present();
+      }break;
 
-    menu.present();
+    }
   }
 
 

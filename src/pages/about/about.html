@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Cantores
+      {{ test }}
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -20,14 +20,28 @@
       </p>
     </ion-card-content>
 
-    <hr>
+    <ion-row no-padding="">
+      <ion-col>
+        <button clear ion-button color="danger" icon-start>
+          <ion-icon name="star"></ion-icon>
+          Favorito
+        </button>
+      </ion-col>
 
-    <ion-item *ngFor="let redeSocial of cantor.redesSociais">
-      <ion-icon item-start style="color: blue;">
-        {{redeSocial.nome}}
-      </ion-icon>
-      <ion-badge item-end>{{redeSocial.seguidores}}</ion-badge>
-    </ion-item>
+      <ion-col text-center>
+        <button ion-button clear color="danger">
+          <ion-icon name="musical-notes"></ion-icon>
+             Escutar
+        </button>
+      </ion-col>
+
+      <ion-col text-right>
+        <button ion-button clear color="danger">
+          <ion-icon name="share-alt"></ion-icon>
+          Share
+        </button>
+      </ion-col>
+    </ion-row>
 
   </ion-card>
 </ion-content>

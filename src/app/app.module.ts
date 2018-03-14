@@ -10,7 +10,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {DetalhesPage} from "../pages/detalhes/detalhes";
+import {BotoesPage} from "../pages/componentes/botoes/botoes";
+import {OpcoesPage} from "../pages/componentes/opcoes/opcoes";
+import {CheckboxPage} from "../pages/componentes/checkbox/checkbox";
+import {FloatButtonsPage} from "../pages/componentes/float-buttons/float-buttons";
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import {DetalhesPage} from "../pages/detalhes/detalhes";
     ContactPage,
     HomePage,
     TabsPage,
-    DetalhesPage
+    BotoesPage,
+    CheckboxPage,
+    OpcoesPage,
+    FloatButtonsPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,10 @@ import {DetalhesPage} from "../pages/detalhes/detalhes";
     ContactPage,
     HomePage,
     TabsPage,
-    DetalhesPage
+    BotoesPage,
+    CheckboxPage,
+    OpcoesPage,
+    FloatButtonsPage
   ],
   providers: [
     StatusBar,

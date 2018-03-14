@@ -4,30 +4,24 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="action-sheets-basic-page">
+<ion-content padding class="action-sheets-basic-page" id="content-home">
+
+  <h4 style="color:red">Aprendendo componentes do Ionic</h4>
 
 
-  <h3>Botoes</h3>
+  <ion-list>
+    <button ion-item (click)="onClickOpcao('botoes')">Botoes</button>
+    <button ion-item (click)="onClickOpcao('opcoes')">Menu de Opcoes</button>
+    <button ion-item (click)="onClickOpcao('checkbox')">Checkbox</button>
+    <button ion-item (click)="onClickOpcao('floatButtons')">Float Buttons</button>
+    <button ion-item (click)="onClickOpcao('botoes')">Botoes</button>
+    <button ion-item (click)="onClickOpcao('botoes')">Botoes</button>
+    <button ion-item (click)="onClickOpcao('botoes')">Botoes</button>
+    <button ion-item (click)="onClickOpcao('botoes')">Botoes</button>
+    <button ion-item (click)="onClickOpcao('botoes')">Botoes</button>
+    <button ion-item (click)="onClickOpcao('botoes')">Botoes</button>
+    <button ion-item (click)="onClickOpcao('botoes')">Botoes</button>
+  </ion-list>
 
-  <h4>Default Buttons</h4>
-  <p>
-    <button ion-button color="light">Light</button>
-    <button ion-button>Default</button>
-    <button ion-button color="secundary">Secundary</button>
-    <button ion-button color="danger">Danger</button>
-    <button ion-button color="dark">Dark</button>
-  </p>
-
-  <h4>Basic Usage</h4>
-  <p>
-    <button></button>
-  </p>
-
-
-  <hr margin-bottom="20">
-
-  <h3>Chamada e opcoes</h3>
-
-  <button ion-button (click)="openMenu()">Mostrar Opcoes</button>
 
 </ion-content>
